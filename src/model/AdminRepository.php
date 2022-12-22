@@ -1,7 +1,12 @@
 <?php
 
 
-require_once ('src/lib/DatabaseConnection.php');
+
+spl_autoload_register(function($class){
+
+    require_once('src/lib/'.$class.'.php');
+
+});
 
 
 
@@ -18,9 +23,9 @@ class AdminRepository
    public function checkAdmin(array $input)
    {
     $statement = $this->connectiondb->getConnection()->prepare(
-        "SELECT `id` FROM `admin` WHERE `username` = ? AND `passwrd` = ?"
+        "SELECT `id` FROM `user` WHERE `email` = ? AND `password` = ? WHERE `role`=?"
     );
-    $statement->execute([$input['username'],$input['password']]);
+    $statement->execute([$input['email'],$input['password'],'admin']);
 
     $auth = $statement->fetch();
 

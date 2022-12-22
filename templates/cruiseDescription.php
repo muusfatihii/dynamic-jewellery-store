@@ -13,44 +13,56 @@
         <div class="bg-white w-96 p-6 rounded shadow-sm">
             
                 <div class="flex items-center justify-center mb-4">
-                    <img src="<?=$cruise->pic;?>" alt="" class="h-32" />
+                    <img src="uploads/<?=$item->pic;?>" alt="" class="h-32" />
                 </div>
-                <label class="text-orange-400" for="">Départ</label>
+                <label class="text-orange-400" for="">Nom d'article</label>
                 <input 
                 class="w-full py-2 bg-gray-100 text-gray-500 px-1 outline-none mb-4 rounded"
                 type="text" 
                 disabled=true
-                value="<?=$cruise->departurePort;?>"
+                value="<?=$item->name;?>"
                 />
-                <label class="text-orange-400" for="">Nuits</label>
+                <label class="text-orange-400" for="">Catégorie</label>
                 <input 
                 class="w-full py-2 bg-gray-100 text-gray-500 px-1 outline-none mb-4 rounded"
                 type="text" 
                 disabled=true
-                value="<?=$cruise->nbrNights;?>"
+                value="<?=$cat->name;?>"
                 />
-                <label class="text-orange-400" for="">Date de départ</label>
+                <label class="text-orange-400" for="">Prix</label>
                 <input 
                 class="w-full py-2 bg-gray-100 text-gray-500 px-1 outline-none mb-4 rounded" 
                 type="text"
                 disabled=true 
-                value="<?=$cruise->departureDate;?>"
+                value="<?=$item->price;?>"
                 />
-                <label class="text-orange-400" for="">Prix minimal</label>
+                <label class="text-orange-400" for="">Quantité</label>
+                <input 
+                class="w-full py-2 bg-gray-100 text-gray-500 px-1 outline-none mb-4 rounded" 
+                type="text" 
+                disabled=true
+                value="<?=$item->quantity;?>"
+                />
+                <label class="text-orange-400" for="">Date d'ajout</label>
                 <input 
                 class="w-full py-2 bg-gray-100 text-gray-500 px-1 outline-none mb-4 rounded" 
                 type="text"
                 disabled=true 
-                value="<?=$cruise->minPrice;?>"
+                value="<?=$item->addDate;?>"
                 />
+                <label class="text-orange-400" for="">Description</label>
+                <input 
+                class="w-full py-2 bg-gray-100 text-gray-500 px-1 outline-none mb-4 rounded" 
+                type="text" 
+                disabled=true
+                value="<?=$item->description;?>"
+                />
+                
+
                 <button 
                 onclick="history.back()" 
                 class="bg-orange-500 w-full text-gray-100 py-2 rounded hover:bg-orange-700 transition-colors">
-                Go back</button>
-                <button 
-                onclick="window.location.href='index.php?action=reserve&id=<?=$cruise->id?>';" 
-                class="bg-orange-500 w-full text-gray-100 py-2 rounded hover:bg-orange-700 transition-colors">
-                Je reserve</button>
+                go back</button>
 
             
        </div>
